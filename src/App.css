@@ -1,38 +1,246 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+.main {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.navbar {
+  width: max(23rem, 100vw);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: clamp(1rem, 2vw, 1.2rem) clamp(1rem, 4vw, 5rem);
+  /* border-bottom: 0.05rem solid rgb(102, 102, 102); */
+  box-shadow: 0rem 0.3rem max(0.8rem, 1.4vw) rgb(156, 156, 156);
+}
+.brandname {
+  /* width: 50%; */
+  font-size: clamp(1.3rem, 5vw, 1.8rem);
+  /* background-color: aquamarine; */
+  padding-top: 0.2rem;
+}
+.part {
+  font-weight: 700;
+  color: rgb(0, 185, 185);
+  letter-spacing: 0.1rem;
+}
+.pagelinks {
+  /* width: 50%; */
+  display: flex;
+  flex-direction: row;
+  gap: clamp(1rem, 5vw, 4rem);
+  /* background-color: aqua; */
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+  /* text-decoration: none; */
+}
+.pagelink {
+  text-decoration: none;
+  color: black;
+  /* text-align: center; */
+  padding-top: 0.3rem;
+}
+.pagelink.active {
+  font-weight: 700;
+  color: rgb(0, 185, 185);
+}
+.about {
+  width: clamp(18rem, 60vw, 50rem);
+  padding-top: max(2rem, 5vw);
+}
+.about h1 {
+  font-size: clamp(1.4rem, 3.6vw, 1.8rem);
+  color: rgb(0, 172, 172);
+}
+.about p {
+  width: 100%;
+  font-size: clamp(1rem, 3.2vw, 1.4rem);
+  padding-top: max(0.5rem, 1vw);
+  color: rgb(25, 88, 88);
 }
 
-.App-link {
-  color: #61dafb;
+.loading {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+
+  /* padding-top: 5rem; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.searchcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  width: 22rem;
+  height: 6rem;
+  /* background-color: rgb(255, 255, 239); */
+  margin-top: clamp(2.5rem, 5vw, 5rem);
+  /* box-shadow: 0.3rem 0.3rem 0.8rem rgb(190, 190, 190); */
+  box-shadow: max(0rem, 0.3vw) 0.3rem 0.8rem rgb(190, 190, 190);
+  padding-bottom: 0.3rem;
+  border-radius: 0.4rem;
+}
+.input:placeholder-shown {
+  border: 0.1rem solid rgb(179, 179, 179);
+}
+.input::placeholder {
+  color: rgba(128, 128, 128, 0.685);
+}
+.home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: antiquewhite; */
+}
+.cocktailscon {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(192, 192, 0); */
+}
+.cocktailscon h2 {
+  /* background-color: aqua; */
+}
+.cocktailsGrid {
+  /* width: 60%; */
+  width: max(60rem, 60%);
+  display: grid;
+  /* background-color: rgb(0, 74, 139); */
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  /* grid-template-rows: repeat(); */
+  grid-auto-flow: row;
+  row-gap: 2rem;
+  column-gap: 1.5rem;
+  grid-auto-rows: 26rem;
+}
+.cocktailItem {
+  background-color: antiquewhite;
+  border-radius: 0.3rem;
+  border-radius: 0.3rem;
+  box-shadow: 0.2rem 0.3rem 0.4rem grey;
+}
+.cocktailItem:hover {
+  box-shadow: 0.7rem 0.7rem 0.7rem rgb(151, 151, 151);
+  transition: all 0.2s ease-in;
+  transform: scale(1.01) translate(-0rem, -0.2rem);
+}
+
+.cocktailItem img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+
+  border-radius: 0.4rem 0.4rem 0 0;
+}
+
+.singlecocktail {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-info {
+  width: max(55rem, 60%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  /* background-color: aqua; */
+}
+.image-info img {
+  width: 40%;
+}
+
+.info {
+  width: 40%;
+  text-align: left;
+}
+
+.withbg {
+  background-color: rgba(169, 197, 41, 0.911);
+  border-radius: 0.3rem;
+}
+
+.cocktaildetail {
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.cocktaildetail .name {
+  font-weight: 500;
+  font-size: clamp(2rem, 2vw, 2.4rem);
+}
+
+.btn {
+  font-size: 1.2rem;
+  background-color: rgb(96, 160, 0);
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.5rem 1.5rem;
+  color: azure;
+  box-shadow: 0rem 0rem 0.2rem grey;
+}
+
+@media screen and (max-width: 1100px) {
+  .cocktailsGrid {
+    width: max(38rem, 65%);
   }
-  to {
-    transform: rotate(360deg);
+
+  .cocktaildetail {
+    width: max(20rem, 70%);
+    /* background-color: aquamarine; */
+  }
+  .image-info {
+    width: 100%;
+    flex-direction: column;
+  }
+  .image-info img {
+    width: 100%;
+  }
+  .info {
+    padding: 0 0rem;
+    width: 100%;
+    /* background-color: antiquewhite; */
   }
 }
+@media screen and (max-width: 700px) {
+  .cocktailsGrid {
+    width: max(19.5rem, 55%);
+  }
+}
+
+/*@media screen and (max-width: 900px) {
+  .cocktailsGrid {
+    width: 70%;
+    width: max(22rem, 80%);
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cocktailsGrid {
+    width: 70%;
+    width: max(22rem, 80%);
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  }
+} */
