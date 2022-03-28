@@ -10,7 +10,7 @@ import Error from "./components/Error";
 function App() {
   return (
     <main className="main">
-      <BrowserRouter>
+      <BrowserRouter basename="/cocktailDB_ReactJS">
         <Navbar />
         <Routes>
           <Route path={"/"} element={<Home />} />
